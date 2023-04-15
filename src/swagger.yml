@@ -1,0 +1,83 @@
+openapi: 3.0.0
+info:
+  title: Inventory API
+  description: Optional multiline or single-line description in [CommonMark](http://commonmark.org/help/) or HTML.
+  version: 1.0.0
+servers:
+  - url: http://localhost:8000
+    description: CRUD Server for Custom Inventory.
+paths:
+  /inventory:
+    get:
+      summary: Returns an Object with Error(Boolean) and Data(Array)
+      description: Return all the inventory
+      responses:
+        '200':    # status code
+          description: Returns an Object with Error(Boolean) and Data(Array).
+          content:
+            application/json:
+              schema: 
+                type: Object
+                items: 
+                  error: Boolean
+                  data: Array
+  /inventory/:id:
+    get:
+      summary: It returns a Specific Product from Inventory.
+      description: It returns a Specific Product.
+      responses:
+        '200':    # status code
+          description: A JSON Object with Error and Data fields.
+          content:
+            application/json:
+              schema: 
+                type: Object
+                items: 
+                  error: Boolean
+                  data: Array
+
+  /product/new:
+    post:
+      summary: Create new Product in the Inventory Database.
+      description: Store a new Product in the Database.
+      responses:
+        '200':    # status code
+          description: A JSON Object with Error, Message and Data fields.
+          content:
+            application/json:
+              schema: 
+                type: Object
+                items: 
+                  error: Boolean
+                  message: String
+                  data: Array
+  /product/:idproduct:
+    put:
+      summary: Update a Product By Id.
+      description: Update a Product By Id, in Endpoint is :id but swagger doesn't let me to duplicate routes.
+      responses:
+        '200':    # status code
+          description: A JSON Object with Error, Message and Data fields.
+          content:
+            application/json:
+              schema: 
+                type: Object
+                items: 
+                  error: Boolean
+                  message: String
+                  data: Object
+  /product/:id:
+    delete:
+      summary: Delete a Product By Id.
+      description: Delete a Product By Id.
+      responses:
+        '200':    # status code
+          description: A JSON Object with Error and Message.
+          content:
+            application/json:
+              schema: 
+                type: Object
+                items: 
+                  error: Boolean
+                  message: String
+                  data: Object

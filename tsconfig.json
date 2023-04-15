@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "module":"CommonJS",
+    "moduleResolution": "NodeNext",
+    "target": "ES6",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "sourceMap": true,
+    "outDir": "build",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "strictPropertyInitialization": false
+  },
+  "include": ["src/**/*"],
+}
